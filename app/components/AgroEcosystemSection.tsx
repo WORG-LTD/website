@@ -84,40 +84,45 @@ const AgroEcosystemSection = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="col-span-2">
-              <div className="rounded-2xl overflow-hidden bg-[#F1F9F2] p-2">
+          <div className="grid grid-cols-2 grid-rows-2 gap-4 h-full">
+            {/* Top left: Tractor (spans 2 columns) */}
+            <div className="row-span-1 col-span-1">
+              <div className="rounded-2xl overflow-hidden bg-[#F1F9F2] p-2 h-full">
                 <Image
                   src="/assets/tractor.png"
                   alt="Tractor in field"
-                  width={500}
-                  height={300}
-                  className="w-full h-auto rounded-xl object-cover"
+                  width={260}
+                  height={180}
+                  className="w-full h-full rounded-xl object-cover"
                 />
               </div>
             </div>
-            <div className="col-span-1">
+            {/* Top right: Lady standing */}
+            <div className="row-span-2 col-span-1">
+              <div className="rounded-2xl overflow-hidden bg-[#F1F9F2] p-2 h-full flex items-center justify-center">
+                <Image
+                  src="/assets/lady-standing.png"
+                  alt="Lady standing in field"
+                  width={260}
+                  height={340}
+                  className="w-full h-full rounded-xl object-cover"
+                />
+              </div>
+            </div>
+            {/* Bottom left: Hands */}
+            <div className="row-span-1 col-span-1">
               <div className="rounded-2xl overflow-hidden bg-[#F1F9F2] p-2 h-full">
                 <Image
                   src="/assets/hands.png"
                   alt="Hands with crop"
-                  width={240}
-                  height={220}
+                  width={260}
+                  height={120}
                   className="w-full h-full rounded-xl object-cover"
                 />
               </div>
             </div>
-            <div className="col-span-1">
-              <div className="rounded-2xl overflow-hidden bg-[#F1F9F2] p-2 h-full">
-                <Image
-                  src="/assets/lady-standing.png"
-                  alt="Lady standing in field"
-                  width={240}
-                  height={220}
-                  className="w-full h-full rounded-xl object-cover"
-                />
-              </div>
-            </div>
+            {/* Bottom right: intentionally empty for layout balance */}
+            <div className="row-span-1 col-span-1"></div>
           </div>
         </div>
       </div>

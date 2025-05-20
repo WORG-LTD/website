@@ -1,5 +1,6 @@
 "use client";
 
+import Image from 'next/image';
 import React, { useState } from 'react';
 
 type FaqItemProps = {
@@ -11,17 +12,19 @@ type FaqItemProps = {
 
 const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
   return (
-    <div className="border-b border-[#0E452D] py-5">
+    <div className="flex flex-col gap-2">
       <button 
-        className="flex justify-between items-center w-full text-left focus:outline-none"
+        className="flex items-start gap-4 w-full text-left focus:outline-none"
         onClick={onClick}
       >
-        <h3 className="text-white font-medium text-lg">{question}</h3>
-        <span className="text-white text-2xl">{isOpen ? '-' : '+'}</span>
+        <span className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 bg-[#13C4761A]`}>
+          <Image src={isOpen ? "/assets/minus.png" : "/assets/plus.png"} alt={isOpen ? "Collapse" : "Expand"} width={isOpen ? 18 : 24} height={isOpen ? 20 : 24} />
+        </span>
+        <h3 className="text-white font-bold text-2xl md:text-3xl leading-snug">{question}</h3>
       </button>
       {isOpen && (
-        <div className="mt-3">
-          <p className="text-[#B2D8BF] text-sm md:text-base">{answer}</p>
+        <div className="pl-14 mt-3">
+          <p className="text-[#B2D8BF] text-lg md:text-xl leading-relaxed">{answer}</p>
         </div>
       )}
     </div>
@@ -63,7 +66,7 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="w-full py-12 md:py-20 bg-[#004720]">
+    <div className="w-full py-12 md:py-20 bg-[#032616]">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-white font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-2">
@@ -73,7 +76,7 @@ const FaqSection = () => {
             Everything you need to know about how WORG works, who it's for, and why it matters
           </p>
           
-          <div className="bg-[#0C5022] p-6 md:p-10 rounded-3xl">
+          <div className="flex flex-col gap-8 mt-8">
             {faqs.map((faq, index) => (
               <FaqItem 
                 key={index}

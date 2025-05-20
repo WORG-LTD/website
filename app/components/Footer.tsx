@@ -6,14 +6,13 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer className="bg-black w-full pt-10 pb-4 px-4">
-      <div className="max-w-3xl mx-auto flex flex-col gap-8 border-b border-[#222] pb-8">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-8 border-b border-[#222] pb-8 items-start">
         {/* Logo and tagline */}
-        <div className="flex flex-col items-center text-center gap-2">
-          <span className="text-4xl font-bold text-green-400 font-['General_Sans']">//WORG</span>
-          <span className="text-white text-lg font-light mt-2">Cultivating excellence</span>
+        <div className="flex flex-col items-start text-left gap-2 flex-1 min-w-[260px]">
+          <Image src="/assets/logo-big-green.png" alt="WORG Logo" width={220} height={80} className="mb-2" />
         </div>
         {/* Grid for nav/contact/address */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center sm:text-left flex-[2] w-full">
           {/* Navigation */}
           <div>
             <ul className="text-white text-sm space-y-1">

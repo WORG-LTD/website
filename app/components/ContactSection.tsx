@@ -4,7 +4,7 @@ import React from "react";
 
 const ContactSection = () => {
   return (
-    <section className="w-full py-16 md:py-24 bg-[#052d1a] flex justify-center">
+    <section className="w-full py-16 md:py-24 bg-[#032616] flex justify-center">
       <div className="bg-[#08371e] rounded-3xl w-full max-w-4xl mx-4 md:mx-8 px-6 md:px-12 py-10 md:py-14 flex flex-col md:flex-row gap-8 items-center">
         {/* Left Side - Text */}
         <div className="flex-1 w-full md:w-1/2 flex flex-col justify-center mb-8 md:mb-0">
