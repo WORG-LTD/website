@@ -3,9 +3,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   const [videoEnded, setVideoEnded] = useState(false);
+  const [heroVisible, setHeroVisible] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const restartAnimation = () => {
@@ -23,6 +25,16 @@ const HeroSection = () => {
   return (
     <div className="flex flex-col w-full">
       <div className="w-full bg-black relative overflow-hidden h-[200px] sm:h-[250px] md:h-[300px] lg:h-[500px]">
+        {/* Animated Headline Overlay */}
+        {/* <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute top-1/2 left-1/2 z-20 text-white text-3xl md:text-5xl font-bold text-center w-full max-w-2xl transform -translate-x-1/2 -translate-y-1/2 drop-shadow-lg"
+        >
+          Empowering Nigeria's Agriculture
+        </motion.h1> */}
+
         {/* Video Background */}
         <div className="absolute inset-0 z-0">
           <video 
@@ -32,6 +44,7 @@ const HeroSection = () => {
             muted
             playsInline
             onEnded={handleVideoEnd}
+            onPlay={() => setHeroVisible(true)}
           >
             <source src="/background-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.

@@ -2,6 +2,57 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
+
+// Animation variants
+const containerVariants: Variants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 20 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.2, 0.8, 0.2, 1],
+    },
+  },
+};
+
+const iconVariants = {
+  open: { rotate: 180 },
+  closed: { rotate: 0 },
+};
+
+const contentVariants = {
+  open: { 
+    opacity: 1,
+    height: 'auto',
+    marginTop: '0.75rem',
+    transition: {
+      duration: 0.4,
+      ease: [0.2, 0.8, 0.2, 1],
+    },
+  },
+  closed: { 
+    opacity: 0,
+    height: 0,
+    marginTop: 0,
+    transition: {
+      duration: 0.3,
+      ease: [0.2, 0.8, 0.2, 1],
+    },
+  },
+};
 
 type FaqItemProps = {
   question: string;
@@ -12,22 +63,84 @@ type FaqItemProps = {
 
 const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
   return (
-    <div className="flex flex-col gap-2">
-      <button 
-        className="flex items-start gap-4 w-full text-left focus:outline-none"
+    <motion.div 
+      className="flex flex-col gap-2"
+      variants={itemVariants}
+      layout
+    >
+      <motion.button 
+        className="flex items-start gap-4 w-full text-left focus:outline-none group"
         onClick={onClick}
+        whileHover={{ scale: 1.01 }}
+        whileTap={{ scale: 0.99 }}
       >
-        <span className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 bg-[#13C4761A]`}>
-          <Image src={isOpen ? "/assets/minus.png" : "/assets/plus.png"} alt={isOpen ? "Collapse" : "Expand"} width={isOpen ? 18 : 24} height={isOpen ? 20 : 24} />
-        </span>
-        <h3 className="text-white font-bold text-2xl md:text-3xl leading-snug">{question}</h3>
-      </button>
-      {isOpen && (
-        <div className="pl-14 mt-3">
-          <p className="text-[#B2D8BF] text-lg md:text-xl leading-relaxed">{answer}</p>
-        </div>
-      )}
-    </div>
+        <motion.span
+          className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-[#13C4761A] group-hover:bg-[#13C47633] transition-colors duration-300"
+          animate={isOpen ? "open" : "closed"}
+          variants={iconVariants}
+          transition={{ duration: 0.3 }}
+        >
+          <AnimatePresence mode="wait">
+            {isOpen ? (
+              <motion.div
+                key="minus"
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Image 
+                  src="/assets/minus.png" 
+                  alt="Collapse" 
+                  width={18} 
+                  height={20} 
+                />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="plus"
+                initial={{ opacity: 0, rotate: -90 }}
+                animate={{ opacity: 1, rotate: 0 }}
+                exit={{ opacity: 0, rotate: 90 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Image 
+                  src="/assets/plus.png" 
+                  alt="Expand" 
+                  width={24} 
+                  height={24} 
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.span>
+        <h3 className="text-white font-bold text-2xl md:text-3xl leading-snug group-hover:text-[#13C476] transition-colors duration-300">
+          {question}
+        </h3>
+      </motion.button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="pl-14 overflow-hidden"
+            initial="closed"
+            animate="open"
+            exit="closed"
+            variants={contentVariants}
+            aria-hidden={!isOpen}
+          >
+            <motion.p 
+              className="text-[#B2D8BF] text-lg md:text-xl leading-relaxed"
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ delay: 0.1, duration: 0.3 }}
+            >
+              {answer}
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
@@ -66,17 +179,32 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="w-full py-12 md:py-20 bg-[#032616]">
+    <div className="w-full py-12 md:py-20 bg-[#032616] overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-white font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-2">
+        <motion.div 
+          className="max-w-4xl mx-auto"
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={containerVariants}
+        >
+          <motion.h2 
+            className="text-white font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-2"
+            variants={itemVariants}
+          >
             WORG | Frequently Asked Questions
-          </h2>
-          <p className="text-[#B2D8BF] text-sm md:text-base mb-12">
+          </motion.h2>
+          <motion.p 
+            className="text-[#B2D8BF] text-sm md:text-base mb-12"
+            variants={itemVariants}
+          >
             Everything you need to know about how WORG works, who it's for, and why it matters
-          </p>
+          </motion.p>
           
-          <div className="flex flex-col gap-8 mt-8">
+          <motion.div 
+            className="flex flex-col gap-8 mt-8"
+            variants={containerVariants}
+          >
             {faqs.map((faq, index) => (
               <FaqItem 
                 key={index}
@@ -86,8 +214,8 @@ const FaqSection = () => {
                 onClick={() => toggleFaq(index)}
               />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </div>
   );

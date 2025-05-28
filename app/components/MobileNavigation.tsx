@@ -1,63 +1,137 @@
 "use client";
 
-import Link from 'next/link';
+import { useEffect } from 'react';
 import Image from 'next/image';
 
+const scrollToSection = (sectionId: string, attempt = 1) => {
+  // Maximum number of attempts to find the element
+  const maxAttempts = 5;
+  
+  const element = document.getElementById(sectionId);
+  
+  if (element) {
+    // If element is found, scroll to it
+    element.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
+  } else if (attempt < maxAttempts) {
+    // If element not found and we haven't exceeded max attempts, try again after a short delay
+    console.log(`Element ${sectionId} not found, retrying... (${attempt}/${maxAttempts})`);
+    setTimeout(() => scrollToSection(sectionId, attempt + 1), 100 * attempt);
+  } else {
+    console.error(`Could not find element with id: ${sectionId} after ${maxAttempts} attempts`);
+  }
+};
+
 const MobileNavigation = () => {
+  // Preload section elements when component mounts
+  useEffect(() => {
+    // This helps ensure sections are in the DOM when needed
+    const sectionIds = ['about', 'model', 'impact', 'method', 'faq', 'contact'];
+    sectionIds.forEach(id => {
+      document.getElementById(id);
+    });
+  }, []);
+
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-black lg:hidden z-50 border-t border-gray-200">
-      <div className="grid grid-cols-5 h-16">
-        <Link href="/" className="flex flex-col items-center justify-center">
-          <div className="h-6 w-6 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-              <polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
+    <div className="fixed bottom-0 left-0 right-0 bg-[#032616] lg:hidden z-50 border-t border-gray-800">
+      <div className="grid grid-cols-6 h-20">
+        <button 
+          onClick={() => scrollToSection('about')}
+          className="flex flex-col items-center justify-center pt-2 w-full active:bg-[#021b0e] transition-colors"
+        >
+          <div className="h-8 w-8 flex items-center justify-center mb-1">
+            <Image 
+              src="/assets/about-worg.png" 
+              alt="About WORG" 
+              width={24} 
+              height={24} 
+              className="w-6 h-6 object-contain"
+            />
           </div>
-          <span className="text-xs mt-1">About WORG</span>
-        </Link>
+          <span className="text-[8px] text-gray-300">About WORG</span>
+        </button>
         
-        <Link href="/our-model" className="flex flex-col items-center justify-center">
-          <div className="h-6 w-6 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
+        <button 
+          onClick={() => scrollToSection('model')}
+          className="flex flex-col items-center justify-center pt-2 w-full active:bg-[#021b0e] transition-colors"
+        >
+          <div className="h-8 w-8 flex items-center justify-center mb-1">
+            <Image 
+              src="/assets/our-model.png" 
+              alt="Our Model" 
+              width={24} 
+              height={24} 
+              className="w-6 h-6 object-contain"
+            />
           </div>
-          <span className="text-xs mt-1">Our Model</span>
-        </Link>
+          <span className="text-[8px] text-gray-300">Our Model</span>
+        </button>
         
-        <Link href="/the-worg-method" className="flex flex-col items-center justify-center">
-          <div className="h-6 w-6 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-              <path d="M2 17l10 5 10-5"></path>
-              <path d="M2 12l10 5 10-5"></path>
-            </svg>
+        <button 
+          onClick={() => scrollToSection('method')}
+          className="flex flex-col items-center justify-center pt-2 w-full active:bg-[#021b0e] transition-colors"
+        >
+          <div className="h-8 w-8 flex items-center justify-center mb-1">
+            <Image 
+              src="/assets/wrong-method.png" 
+              alt="The WORG Method" 
+              width={24} 
+              height={24} 
+              className="w-6 h-6 object-contain"
+            />
           </div>
-          <span className="text-xs mt-1">The WORG Method</span>
-        </Link>
+          <span className="text-[8px] text-gray-300">Method</span>
+        </button>
         
-        <Link href="/get-in-touch" className="flex flex-col items-center justify-center">
-          <div className="h-6 w-6 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-            </svg>
+        <button 
+          onClick={() => scrollToSection('impact')}
+          className="flex flex-col items-center justify-center pt-2 w-full active:bg-[#021b0e] transition-colors"
+        >
+          <div className="h-8 w-8 flex items-center justify-center mb-1">
+            <Image 
+              src="/assets/our-impact.png" 
+              alt="Our Impact" 
+              width={24} 
+              height={24} 
+              className="w-6 h-6 object-contain"
+            />
           </div>
-          <span className="text-xs mt-1">Get In Touch</span>
-        </Link>
+          <span className="text-[8px] text-gray-300">Our Impact</span>
+        </button>
         
-        <Link href="/help" className="flex flex-col items-center justify-center">
-          <div className="h-6 w-6 flex items-center justify-center">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-              <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
+        <button 
+          onClick={() => scrollToSection('faq')}
+          className="flex flex-col items-center justify-center pt-2 w-full active:bg-[#021b0e] transition-colors"
+        >
+          <div className="h-8 w-8 flex items-center justify-center mb-1">
+            <Image 
+              src="/assets/FAQs.png" 
+              alt="FAQs" 
+              width={24} 
+              height={24} 
+              className="w-6 h-6 object-contain"
+            />
           </div>
-          <span className="text-xs mt-1">Help</span>
-        </Link>
+          <span className="text-[8px] text-gray-300">FAQs</span>
+        </button>
+        
+        <button 
+          onClick={() => scrollToSection('contact')}
+          className="flex flex-col items-center justify-center pt-2 w-full active:bg-[#021b0e] transition-colors"
+        >
+          <div className="h-8 w-8 flex items-center justify-center mb-1">
+            <Image 
+              src="/assets/contact.png" 
+              alt="Contact" 
+              width={24} 
+              height={24} 
+              className="w-6 h-6 object-contain"
+            />
+          </div>
+          <span className="text-[8px] text-gray-300">Contact</span>
+        </button>
       </div>
     </div>
   );
