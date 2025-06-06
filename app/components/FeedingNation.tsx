@@ -199,7 +199,7 @@ const FeedingNation = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
-                className="w-[200px] text-[8px] py-1 px-4 mt-4 sm:mt-8 md:mt-0 border border-[#13C476] text-[#13C476] font-[600] font-['General_Sans'] md:self-auto sm:w-full md:w-auto rounded-md hover:bg-[#13C476] hover:text-white mx-auto md:mx-0 lg:self-center"
+                className="w-[200px] text-[8px] py-2 px-8 mt-4 sm:mt-8 md:mt-0 border border-[#8B8B8B] text-[#8B8B8B] font-[600] md:font-[400] font-['General_Sans'] md:self-auto sm:w-full md:text-[12px] md:w-auto rounded-md hover:bg-[#c4c4c4] hover:text-[#fff] mx-auto md:mx-0 lg:self-center"
               >
                 Download now
               </motion.button>

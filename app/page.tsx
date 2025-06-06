@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Header from "./components/Header";
@@ -16,7 +18,50 @@ import CallToActionSection from "./components/CallToActionSection";
 import ContactSection from "./components/ContactSection";
 import Link from "next/link";
 
+// Smooth scroll helper function
+const smoothScrollTo = (hash: string) => {
+  if (!hash) return;
+  
+  const element = document.querySelector(hash);
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  }
+};
+
 export default function Home() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Handle initial scroll position on page load
+    const hash = window.location.hash;
+    if (hash) {
+      // Small timeout to ensure the DOM is fully loaded
+      const timer = setTimeout(() => {
+        smoothScrollTo(hash);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [pathname, searchParams]);
+  
+  // Handle scroll restoration on back/forward navigation
+  useEffect(() => {
+    const handlePopState = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        smoothScrollTo(hash);
+      } else {
+        window.scrollTo(0, 0);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col relative pb-16 md:pb-0 overflow-hidden rounded-lg shadow-lg">
       <div className="flex flex-col w-[100%] sm:w-[95%] mx-auto lg:pt-24 md:pt-4 md:px-4">
@@ -28,7 +73,11 @@ export default function Home() {
               transition: { duration: 0.2 }
             }}
           >
-            <Link href="/">
+            <Link href="#" scroll={false} onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.history.pushState({}, '', window.location.pathname);
+            }}>
               <Image
                 src="/assets/logo-black.png"
                 alt="WORG Logo"
@@ -43,10 +92,8 @@ export default function Home() {
             <button 
               className="bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-6 rounded-md text-sm"
               onClick={() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
+                smoothScrollTo('#contact');
+                window.history.pushState({}, '', '#contact');
               }}
             >
               Talk to Us
@@ -77,8 +124,10 @@ export default function Home() {
       <div id="faq">
         <FaqSection />
       </div>
-      <div id="contact">
+      <div id="join">
         <CallToActionSection />
+      </div>
+      <div id="contact">
         <ContactSection />
       </div>
       <MobileNavigation />
