@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-black w-full pt-10 pb-4 px-4">
-      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row gap-8 border-b border-[#222] pb-8 items-start">
+    <footer className="bg-black w-full md:py-[4rem] px-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:py-[4rem] sm:flex-row gap-8 border-[#222] pb-8 items-start">
         {/* Logo and tagline */}
         <div className="flex flex-col items-start text-left gap-2 flex-1 min-w-[260px]">
           <Image src="/assets/logo-big-green.png" alt="WORG Logo" width={220} height={80} className="mb-2" />
@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Bottom row */}
-      <div className="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center pt-6 gap-2">
+      <div className="max-w-3xl mx-auto flex flex-col md:pt-[4rem] md:pb-[4rem] sm:flex-row justify-between items-center pt-6 gap-2">
         <span className="text-xs text-gray-400 text-center">© Worg 2024. All rights Reserved</span>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-10 items-center">
           <Link href="/privacy" className="text-xs text-gray-300 hover:text-green-300">Privacy Policy</Link>

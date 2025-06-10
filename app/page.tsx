@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -67,6 +67,28 @@ function ScrollHandler() {
 }
 
 export default function Home() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.pageYOffset > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', toggleVisibility);
+    return () => window.removeEventListener('scroll', toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <ScrollHandler />
@@ -121,6 +143,7 @@ export default function Home() {
         </div>
         <div className="bg-gray-100" id="impact">
           <StatsSection />
+          <PurposeSection />
         </div>
         <div className="bg-white" id="method">
           <AgroEcosystemSection />
@@ -140,6 +163,17 @@ export default function Home() {
         <MobileNavigation />
         <Footer />
       </div>
+      {isVisible && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transition-all duration-300 z-50"
+          aria-label="Scroll to top"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
+      )}
     </Suspense>
   );
 }

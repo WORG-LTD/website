@@ -116,7 +116,7 @@ const CallToActionSection = () => {
   return (
     <div className="w-full py-[4rem] md:py-[7rem] bg-[#032616] relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
-        <div className="max-w-5xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative">
           <motion.div 
             className="relative flex justify-center"
             ref={containerRef}

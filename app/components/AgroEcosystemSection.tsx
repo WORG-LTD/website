@@ -97,11 +97,11 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold">01</span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
               </motion.div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">Farmer Clusters</h3>
-                <p className="text-sm text-[#79797A]">
+              <div className="group">
+                <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Farmer Clusters</h3>
+                <p className="text-sm text-[#79797A] group-hover:text-[#79797A]">
                   We organize and empower smallholder farmers with training, inputs, and access to markets.
                 </p>
               </div>
@@ -117,12 +117,12 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold">02</span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
               </motion.div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">Infrastructure</h3>
-                <p className="text-sm text-[#79797A]">
-                  We provide land mapping, equipment, aggregation centers, and storage hubs.
+              <div className="group">
+                <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Infrastructure</h3>
+                <p className="text-sm text-[#79797A] group-hover:text-[#79797A]">
+                  We build and maintain the physical and digital infrastructure needed for efficient farming operations.
                 </p>
               </div>
             </motion.div>
@@ -137,12 +137,12 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold">03</span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
               </motion.div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">Standardization</h3>
-                <p className="text-sm text-[#79797A]">
-                  We ensure all produce meets quality benchmarks — locally and for export.
+              <div className="group">
+                <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Standardization</h3>
+                <p className="text-sm text-[#79797A] group-hover:text-[#79797A]">
+                  We implement standardized practices and processes to ensure consistency and quality.
                 </p>
               </div>
             </motion.div>
@@ -157,12 +157,12 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold">04</span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
               </motion.div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">Technology</h3>
-                <p className="text-sm text-[#79797A]">
-                  We build platforms to monitor yields, optimize processes, and drive policy through data.
+              <div className="group">
+                <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Technology</h3>
+                <p className="text-sm text-[#79797A] group-hover:text-[#79797A]">
+                  We leverage cutting-edge technology to optimize farming efficiency and sustainability.
                 </p>
               </div>
             </motion.div>
@@ -177,12 +177,12 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold">05</span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
               </motion.div>
-              <div>
-                <h3 className="font-bold text-lg mb-1">Finance</h3>
-                <p className="text-sm text-[#79797A]">
-                  We create pathways for investments and partnerships across the value chain.
+              <div className="group">
+                <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Finance</h3>
+                <p className="text-sm text-[#79797A] group-hover:text-[#79797A]">
+                  We provide access to financial services and support to ensure sustainable growth.
                 </p>
               </div>
             </motion.div>

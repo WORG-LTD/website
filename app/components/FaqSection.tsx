@@ -114,7 +114,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
             )}
           </AnimatePresence>
         </motion.span>
-        <h3 className="text-white font-bold text-2xl md:text-3xl leading-snug group-hover:text-[#13C476] transition-colors duration-300">
+        <h3 className="text-white font-semibold text-2xl md:text-2xl leading-snug group-hover:text-[#13C476] transition-colors duration-300">
           {question}
         </h3>
       </motion.button>
@@ -182,7 +182,7 @@ const FaqSection = () => {
     <div className="w-full py-12 md:py-20 bg-[#032616] overflow-hidden">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <motion.div 
-          className="max-w-4xl mx-auto"
+          className="max-w-6xl mx-auto"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
@@ -201,6 +201,7 @@ const FaqSection = () => {
             Everything you need to know about how WORG works, who it's for, and why it matters
           </motion.p>
           
+          <div className="container bg-[#13C4761A] rounded-[30px] p-12 px-[8rem] mx-auto">
           <motion.div 
             className="flex flex-col gap-8 mt-8"
             variants={containerVariants}
@@ -215,6 +216,7 @@ const FaqSection = () => {
               />
             ))}
           </motion.div>
+          </div>
         </motion.div>
       </div>
     </div>
