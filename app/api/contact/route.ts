@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     const MAILTRAP_TEMPLATE_UUID = 'a6262619-825e-417f-a479-7b834835628d';
     const MAILTRAP_FROM_EMAIL = 'info@worgltd.com';
     const MAILTRAP_FROM_NAME = 'WORG Contact Form';
-    const MAILTRAP_TO_EMAIL = 'difrentecho@gmail.com';
+    const MAILTRAP_TO_EMAIL = 'info@worgltd.com';
 
     const response = await fetch('https://send.api.mailtrap.io/api/send', {
       method: 'POST',
