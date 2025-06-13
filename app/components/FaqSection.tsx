@@ -75,7 +75,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
         whileTap={{ scale: 0.99 }}
       >
         <motion.span
-          className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-[#13C4761A] group-hover:bg-[#13C47633] transition-colors duration-300"
+          className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-[#13C4761A] group-hover:bg-[#13C47633] transition-colors duration-300"
           animate={isOpen ? "open" : "closed"}
           variants={iconVariants}
           transition={{ duration: 0.3 }}
@@ -114,14 +114,14 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
             )}
           </AnimatePresence>
         </motion.span>
-        <h3 className="text-white font-semibold text-2xl md:text-2xl leading-snug group-hover:text-[#13C476] transition-colors duration-300">
+        <h3 className="text-white font-semibold text-xl md:text-2xl leading-snug group-hover:text-[#13C476] transition-colors duration-300">
           {question}
         </h3>
       </motion.button>
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="pl-14 overflow-hidden"
+            className="pl-0 sm:pl-12 md:pl-14 overflow-hidden"
             initial="closed"
             animate="open"
             exit="closed"
@@ -129,7 +129,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
             aria-hidden={!isOpen}
           >
             <motion.p 
-              className="text-[#B2D8BF] text-lg md:text-xl leading-relaxed"
+              className="text-[#B2D8BF] text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
@@ -179,33 +179,33 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="w-full py-12 md:py-20 bg-[#032616] overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8 lg:px-12">
+    <div className="w-full py-8 sm:py-12 md:py-16 lg:py-20 bg-[#032616] overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <motion.div 
-          className="max-w-6xl mx-auto"
+          className="max-w-4xl lg:max-w-6xl mx-auto"
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-white font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-2"
+            className="text-white font-['General_Sans'] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-medium mb-2"
             variants={itemVariants}
           >
             WORG | Frequently Asked Questions
           </motion.h2>
           <motion.p 
-            className="text-[#B2D8BF] text-sm md:text-base mb-12"
+            className="text-[#B2D8BF] text-xs sm:text-sm md:text-base mb-8 sm:mb-10 lg:mb-12"
             variants={itemVariants}
           >
             Everything you need to know about how WORG works, who it's for, and why it matters
           </motion.p>
           
-          <div className="container bg-[#13C4761A] rounded-[30px] p-12 px-[8rem] mx-auto">
-          <motion.div 
-            className="flex flex-col gap-8 mt-8"
-            variants={containerVariants}
-          >
+          <div className="bg-[#13C4761A] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 lg:px-16 xl:px-20 mx-auto">
+            <motion.div 
+              className="flex flex-col gap-4 sm:gap-6 md:gap-8"
+              variants={containerVariants}
+            >
             {faqs.map((faq, index) => (
               <FaqItem 
                 key={index}

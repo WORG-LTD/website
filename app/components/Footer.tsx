@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
       </div>
       {/* Bottom row */}
-      <div className="max-w-3xl mx-auto flex flex-col md:pt-[4rem] md:pb-[4rem] sm:flex-row justify-between items-center pt-6 gap-2">
+      <div className="max-w-3xl mx-auto pb-6 md:pb-0 flex flex-col md:pt-[4rem] md:pb-[4rem] sm:flex-row justify-between items-center pt-6 gap-2">
         <span className="text-xs text-gray-400 text-center">© Worg 2024. All rights Reserved</span>
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-10 items-center">
           <Link href="/privacy" className="text-xs text-gray-300 hover:text-green-300">Privacy Policy</Link>
