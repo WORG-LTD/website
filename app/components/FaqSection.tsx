@@ -75,7 +75,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
         whileTap={{ scale: 0.99 }}
       >
         <motion.span
-          className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-[#13C4761A] group-hover:bg-[#13C47633] transition-colors duration-300"
+          className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center bg-[#4064341A] group-hover:bg-[#40643433] transition-colors duration-300"
           animate={isOpen ? "open" : "closed"}
           variants={iconVariants}
           transition={{ duration: 0.3 }}
@@ -114,7 +114,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }: FaqItemProps) => {
             )}
           </AnimatePresence>
         </motion.span>
-        <h3 className="text-white font-semibold text-xl md:text-2xl leading-snug group-hover:text-[#13C476] transition-colors duration-300">
+        <h3 className="text-white font-semibold text-xl md:text-2xl leading-snug group-hover:text-[#406434] transition-colors duration-300">
           {question}
         </h3>
       </motion.button>
@@ -201,7 +201,7 @@ const FaqSection = () => {
             Everything you need to know about how WORG works, who it's for, and why it matters
           </motion.p>
           
-          <div className="bg-[#13C4761A] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 lg:px-16 xl:px-20 mx-auto">
+          <div className="bg-[#4064341A] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 lg:px-16 xl:px-20 mx-auto">
             <motion.div 
               className="flex flex-col gap-4 sm:gap-6 md:gap-8"
               variants={containerVariants}

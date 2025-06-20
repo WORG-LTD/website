@@ -64,7 +64,7 @@ const AgroEcosystemSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-[#13C476] font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-4">
+          <h2 className="text-[#406434] font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-4">
             A Nationwide<br />
             Agro-Ecosystem
           </h2>
@@ -97,7 +97,7 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#406434] font-bold"></span>
               </motion.div>
               <div className="group">
                 <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Farmer Clusters</h3>
@@ -117,7 +117,7 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#406434] font-bold"></span>
               </motion.div>
               <div className="group">
                 <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Infrastructure</h3>
@@ -137,7 +137,7 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#406434] font-bold"></span>
               </motion.div>
               <div className="group">
                 <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Standardization</h3>
@@ -157,7 +157,7 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#406434] font-bold"></span>
               </motion.div>
               <div className="group">
                 <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Technology</h3>
@@ -177,7 +177,7 @@ const AgroEcosystemSection = () => {
                 className="bg-gray-50 rounded-full p-2 mt-1 group-hover:bg-green-50 transition-colors"
                 whileHover={{ scale: 1.1 }}
               >
-                <span className="flex items-center justify-center h-6 w-6 text-[#13C476] font-bold"></span>
+                <span className="flex items-center justify-center h-6 w-6 text-[#406434] font-bold"></span>
               </motion.div>
               <div className="group">
                 <h3 className="font-bold text-lg mb-1 text-[#BCBCBC] group-hover:text-black">Finance</h3>

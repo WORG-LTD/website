@@ -59,7 +59,7 @@ const WorgMethodSection = () => {
             variants={containerVariants}
           >
             <motion.div 
-              className="text-[#13C476] text-sm md:text-base mb-3"
+              className="text-[#406434] text-sm md:text-base mb-3"
               variants={textVariants}
             >
               The Process: 3-Point Journey
@@ -92,7 +92,7 @@ const WorgMethodSection = () => {
               <motion.div
                 variants={itemVariants}
                 whileHover="hover"
-                className="bg-[#13C4761A] rounded-3xl p-6 md:p-8 shadow-sm max-w-xs w-[200px] cursor-pointer"
+                className="bg-[#4064341A] rounded-3xl p-6 md:p-8 shadow-sm max-w-xs w-[200px] cursor-pointer"
               >
                 <motion.div 
                   className="flex items-center mb-4"
@@ -121,7 +121,7 @@ const WorgMethodSection = () => {
               <motion.div
                 variants={itemVariants}
                 whileHover="hover"
-                className="bg-[#13C4761A] rounded-3xl p-6 md:p-8 max-w-xs w-[200px] shadow-sm cursor-pointer"
+                className="bg-[#4064341A] rounded-3xl p-6 md:p-8 max-w-xs w-[200px] shadow-sm cursor-pointer"
               >
                 <motion.div 
                   className="flex items-center mb-4"
@@ -144,7 +144,7 @@ const WorgMethodSection = () => {
               <motion.div
                 variants={itemVariants}
                 whileHover="hover"
-                className="bg-[#13C4761A] self-end md:self-auto rounded-3xl p-6 md:p-8 max-w-xs w-[200px] shadow-sm cursor-pointer"
+                className="bg-[#4064341A] self-end md:self-auto rounded-3xl p-6 md:p-8 max-w-xs w-[200px] shadow-sm cursor-pointer"
               >
                 <motion.div 
                   className="flex items-center mb-4"

@@ -101,7 +101,7 @@ const FeedingNation = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[20px] sm:text-[25px] md:text-[30px] lg:text-[64px] font-medium font-['General_Sans'] text-[#13C476] mb-4"
+              className="text-[20px] sm:text-[25px] md:text-[30px] lg:text-[64px] font-medium font-['General_Sans'] text-[#406434] mb-4"
             >
               Feeding the Nation,<br />
               Fueling the Future
@@ -121,7 +121,7 @@ const FeedingNation = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="bg-[#13C476] hover:bg-[#13C476] text-white font-medium py-2 px-6 rounded-md"
+              className="bg-[#406434] hover:bg-[#406434] text-white font-medium py-2 px-6 rounded-md"
             >
               Partner with us
             </motion.button>

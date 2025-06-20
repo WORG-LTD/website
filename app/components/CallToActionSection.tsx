@@ -140,7 +140,7 @@ const CallToActionSection = () => {
             >
               {/* Animated background elements */}
               <motion.div 
-                className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[#13C476] opacity-10"
+                className="absolute -top-20 -right-20 w-40 h-40 rounded-full bg-[#406434] opacity-10"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.1, 0.2, 0.1],
@@ -169,7 +169,7 @@ const CallToActionSection = () => {
                 <motion.div variants={itemVariants}>
                   <Link href="/contact" className="inline-block">
                     <motion.button 
-                      className="bg-[#13C476] text-white font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors text-sm relative overflow-hidden group"
+                      className="bg-[#406434] text-white font-medium py-3 px-8 rounded-full hover:bg-opacity-90 transition-colors text-sm relative overflow-hidden group"
                       variants={buttonVariants}
                       initial="initial"
                       whileHover="hover"

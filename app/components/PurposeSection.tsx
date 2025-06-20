@@ -54,7 +54,7 @@ const PurposeSection = () => {
     <div className="w-full py-12 md:py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-12">
         <motion.h2 
-          className="text-[#13C476] font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-12 md:mb-16"
+          className="text-[#406434] font-['General_Sans'] text-2xl md:text-3xl lg:text-4xl font-medium mb-12 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
