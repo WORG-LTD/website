@@ -194,7 +194,11 @@ const FeedingNation = () => {
                 />
               </motion.div>
 
-              <motion.button
+              <motion.a
+                href="/assets/WORG_PITCH-DECK.pdf"
+                download
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
@@ -202,7 +206,7 @@ const FeedingNation = () => {
                 className="w-[200px] text-[8px] py-2 px-8 mt-4 sm:mt-8 md:mt-0 border border-[#8B8B8B] text-[#8B8B8B] font-[600] md:font-[400] font-['General_Sans'] md:self-auto sm:w-full md:text-[12px] md:w-auto rounded-md hover:bg-[#c4c4c4] hover:text-[#fff] mx-auto md:mx-0 lg:self-center"
               >
                 Download now
-              </motion.button>
+              </motion.a>
             </motion.div>
           </motion.div>
         </motion.div>
