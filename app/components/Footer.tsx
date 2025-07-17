@@ -28,7 +28,7 @@ const Footer = () => {
           <div>
             <span className="text-white font-semibold text-sm mb-2 block">Contact us</span>
             <ul className="text-gray-300 text-sm space-y-1">
-              <li><Link href="mailto:info@worg.ng">info@worg.ng</Link></li>
+              <li><Link href="mailto:info@worgltd.com">info@worgltd.com</Link></li>
               <li><Link href="#" className="text-green-400 underline">Download Pitch deck</Link></li>
             </ul>
           </div>
