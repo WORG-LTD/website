@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
+
 const Footer = () => {
   return (
     <footer className="bg-black w-full md:py-[4rem] px-4">
