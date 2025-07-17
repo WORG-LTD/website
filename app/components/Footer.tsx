@@ -27,22 +27,37 @@ const Footer = () => {
           <div>
             <span className="text-white font-semibold text-sm mb-2 block">Contact us</span>
             <ul className="text-gray-300 text-sm space-y-1">
-              <li>Support@worg.ng</li>
-              <li>Linkedin</li>
-              <li>X (Twitter)</li>
+              <li><Link href="mailto:info@worg.ng">info@worg.ng</Link></li>
               <li><Link href="#" className="text-green-400 underline">Download Pitch deck</Link></li>
             </ul>
           </div>
           {/* Address */}
           <div>
             <span className="text-white font-semibold text-sm mb-2 block">Address</span>
-            <span className="text-gray-300 text-sm">Opposite Old Government<br/>House Close, Rayfield, Jos,<br/>Plateau State, Nigeria</span>
+            <span className="text-gray-300 text-sm">No. 1b, Ibrahim Taiwo Road, Jos, Plateau State.</span>
           </div>
         </div>
       </div>
       {/* Bottom row */}
-      <div className="max-w-3xl mx-auto pb-6 md:pb-0 flex flex-col md:pt-[4rem] md:pb-[4rem] sm:flex-row justify-between items-center pt-6 gap-2">
+      <div className="max-w-3xl mx-auto pb-6 md:pb-0 flex flex-col md:pt-[4rem] md:pb-[4rem] sm:flex-row justify-between items-center pt-6 gap-4">
         <span className="text-xs text-gray-400 text-center">© Worg 2024. All rights Reserved</span>
+        
+        {/* Social Media Icons */}
+        <div className="flex gap-4 order-first sm:order-none">
+          <Link href="https://www.linkedin.com/company/worg-ltd" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+            <Image src="/assets/Linkedin.png" alt="LinkedIn" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Link>
+          <Link href="https://x.com/worgng_ltd" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+            <Image src="/assets/Twitter X.png" alt="Twitter" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Link>
+          <Link href="https://www.instagram.com/worg_ng_ltd/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+            <Image src="/assets/Instagram.png" alt="Instagram" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Link>
+          <Link href="https://www.youtube.com/@WORGNG_Ltd" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+            <Image src="/assets/Youtube.png" alt="YouTube" width={24} height={24} className="w-5 h-5 sm:w-6 sm:h-6" />
+          </Link>
+        </div>
+        
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-10 items-center">
           <Link href="/privacy" className="text-xs text-gray-300 hover:text-green-300">Privacy Policy</Link>
           <Link href="#" className="text-xs text-gray-300 hover:text-green-300">Terms and conditions</Link>
