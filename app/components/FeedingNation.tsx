@@ -195,7 +195,7 @@ const FeedingNation = () => {
               </motion.div>
 
               <motion.a
-                href="/assets/WORG_PITCH-DECK.pdf"
+                href="/assets/WORG-Pitchdeck_2025.pdf"
                 download
                 target="_blank"
                 rel="noopener noreferrer"
